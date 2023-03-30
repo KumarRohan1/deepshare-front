@@ -7,6 +7,7 @@ const progressPercent = document.querySelector("#progressPercent");
 const progressContainer = document.querySelector(".progress-container");
 const progressBar = document.querySelector(".progress-bar");
 const status = document.querySelector(".status");
+const qrimg = document.querySelector(".qr-container");
 
 const sharingContainer = document.querySelector(".sharing-container");
 const copyURLBtn = document.querySelector("#copyURLBtn");
@@ -129,7 +130,13 @@ const onFileUploadSuccess = (res) => {
   const { file: url } = JSON.parse(res);
   console.log(url);
   sharingContainer.style.display = "block";
+  dropZone.style.display = "none";
   fileURL.value = url;
+  var img = document.createElement("img");
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${url}`;
+  var src = document.getElementById("qrid");
+  src.appendChild(img);
+
 };
 
 emailForm.addEventListener("submit", (e) => {

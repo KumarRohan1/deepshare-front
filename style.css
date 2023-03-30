@@ -185,7 +185,7 @@ body,
   color: #607d8b;
 }
 
-.sharing-container img {
+.input-container img {
   height: 22px;
   width: 30px;
   position: absolute;
@@ -193,6 +193,24 @@ body,
   top: 12px;
   cursor: pointer;
   background: #f5fcff;
+}
+
+.qr-container{
+  border: 2px solid var(--border-color);
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.qr-container img{
+
+      width: 100px;
+      height: 100px;
 }
 
 .email-container form {
